@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Салон красоты «Лиана» - стрижки, окрашивание, маникюр и педикюр</title>
+<meta name="description" content="Салон красоты «Лиана»: женские и мужские стрижки, окрашивание, укладки, маникюр, педикюр, гель-лак, наращивание ногтей. Работаем с 09:00 до 20:00. Тел. 758-765.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23173c30'/%3E%3Ctext x='16' y='23' font-size='18' text-anchor='middle' fill='%23d4af6a' font-family='Georgia'%3EЛ%3C/text%3E%3C/svg%3E">
+<style>
+/* ============ FONTS (локальные файлы, папка fonts/) ============ */
+@font-face{font-family:'Playfair Display';src:url('fonts/playfair-display-400.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Playfair Display';src:url('fonts/playfair-display-700.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:'Playfair Display';src:url('fonts/playfair-display-italic-400.woff2') format('woff2');font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:'Manrope';src:url('fonts/manrope-400.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Manrope';src:url('fonts/manrope-600.woff2') format('woff2');font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:'Manrope';src:url('fonts/manrope-700.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap}
+
+/* ============ TOKENS ============ */
+:root{
+ --green-950:#0d1f19;
+ --green-900:#122a22;
+ --green-800:#173c30;
+ --green-700:#1e4d3b;
+ --green-600:#2a6350;
+ --ivory:#f7f2e9;
+ --paper:#fffdf8;
+ --sand:#eee5d4;
+ --line:#e3d9c6;
+ --ink:#212a25;
+ --muted:#5d6a62;
+ --gold:#c9a45c;
+ --gold-dark:#a9803a;
+ --gold-soft:#e8d6ae;
+ --terra:#b45f4a;
+ --radius:18px;
+ --header-h:68px;
+ --shadow:0 18px 44px rgba(18,42,34,.14);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+html,body{overflow-x:clip}
+body{
+ font-family:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;
+ background:var(--ivory);color:var(--ink);
+ font-size:16px;line-height:1.6;
+ -webkit-font-smoothing:antialiased;
+}
+body.lock{overflow:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:6px}
+section{scroll-margin-top:calc(var(--header-h) + 14px)}
+.wrap{width:min(1160px,100% - 32px);margin-inline:auto}
+.icon{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.icon--fill{fill:currentColor;stroke:none}
+
+h1,h2,h3,.serif{font-family:'Playfair Display',Georgia,'Times New Roman',serif;font-weight:700;line-height:1.15}
+.eyebrow{
+ display:inline-flex;align-items:center;gap:12px;
+ font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
+ color:var(--gold-dark);margin-bottom:14px;
+}
+.eyebrow::before{content:"";width:34px;height:1px;background:var(--gold-dark)}
+.section{padding:clamp(56px,8vw,104px) 0}
+.section--paper{background:var(--paper)}
+.section--dark{background:var(--green-900);color:var(--ivory)}
+.section-head{max-width:640px;margin-bottom:clamp(28px,4vw,48px)}
+.section-head h2{font-size:clamp(27px,4vw,42px)}
+.section-head p{color:var(--muted);margin-top:12px}
+.section--dark .section-head p{color:#b9c6be}
+
+/* ============ BUTTONS ============ */
+.btn{
+ display:inline-flex;align-items:center;justify-content:center;gap:10px;
+ min-height:48px;padding:0 26px;border-radius:14px;border:1px solid transparent;
+ font-weight:700;font-size:15px;letter-spacing:.02em;
+ transition:transform .25s ease,box-shadow .25s ease,background .25s ease,color .25s;
+ white-space:nowrap;
+}
+.btn:active{transform:translateY(1px)}
+.btn--gold{
+ background:linear-gradient(180deg,#dcbb77 0%,#c9a45c 55%,#b58c42 100%);
+ color:#241a08;box-shadow:0 10px 24px rgba(169,128,58,.35);
+}
+.btn--gold:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(169,128,58,.45)}
+.btn--ghost-light{border-color:rgba(247,242,233,.45);color:var(--ivory)}
+.btn--ghost-light:hover{border-color:var(--gold);color:var(--gold-soft)}
+.btn--ghost-dark{border-color:rgba(30,77,59,.4);color:var(--green-700)}
+.btn--ghost-dark:hover{border-color:var(--green-700);background:rgba(30,77,59,.06)}
+.btn--wide{width:100%}
+.btn--sm{min-height:44px;padding:0 20px;font-size:14px;border-radius:12px}
+
+/* ============ HEADER ============ */
+.header{
+ position:sticky;top:0;z-index:100;
+ background:rgba(13,31,25,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+ color:var(--ivory);transition:box-shadow .3s;
+}
+.header.scrolled{box-shadow:0 8px 28px rgba(0,0,0,.28)}
+.header__in{
+ height:var(--header-h);display:flex;align-items:center;gap:20px;
+ width:min(1160px,100% - 32px);margin-inline:auto;position:relative;
+}
+.logo{display:flex;flex-direction:column;line-height:1.05}
+.logo b{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:var(--gold-soft)}
+.logo span{font-size:10.5px;letter-spacing:.28em;text-transform:uppercase;color:#9db3a8}
+.nav-desktop{display:flex;gap:26px;margin-left:auto}
+.nav-desktop a{font-size:14.5px;font-weight:600;color:#d9e2dc;position:relative;padding:6px 0}
+.nav-desktop a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--gold);transition:width .3s}
+.nav-desktop a:hover{color:var(--gold-soft)}
+.nav-desktop a:hover::after{width:100%}
+.header__right{display:flex;align-items:center;gap:16px;margin-left:auto}
+.nav-desktop + .header__right{margin-left:0}
+.header__phone{display:flex;align-items:center;gap:8px;font-weight:700;font-size:15px;color:var(--gold-soft)}
+.header__phone:hover{color:#fff}
+.header .btn--sm{background:linear-gradient(180deg,#dcbb77,#b58c42);color:#241a08}
+
+.burger{
+ display:none;width:46px;height:46px;border:1px solid rgba(247,242,233,.3);
+ background:rgba(255,255,255,.06);border-radius:12px;
+ position:relative;z-index:130; /* выше мобильного меню */
+ align-items:center;justify-content:center;flex-direction:column;gap:5px;
+}
+.burger span{display:block;width:20px;height:2px;background:var(--ivory);border-radius:2px;transition:transform .3s,opacity .3s}
+.burger.active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.active span:nth-child(2){opacity:0}
+.burger.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+.mobile-nav{
+ position:fixed;top:var(--header-h);left:0;right:0;z-index:120;
+ background:var(--green-950);color:var(--ivory);
+ padding:10px 16px 26px;
+ transform:translateY(-12px);opacity:0;visibility:hidden;
+ transition:transform .3s ease,opacity .3s ease,visibility .3s;
+ border-bottom:1px solid rgba(201,164,92,.35);
+ box-shadow:0 24px 40px rgba(0,0,0,.35);
+}
+.mobile-nav.open{transform:translateY(0);opacity:1;visibility:visible}
+.mobile-nav a.m-link{
+ display:block;padding:13px 8px;font-family:'Playfair Display',serif;font-size:20px;
+ border-bottom:1px solid rgba(247,242,233,.1);color:var(--ivory);
+}
+.mobile-nav a.m-link:hover{color:var(--gold-soft)}
+.mobile-nav__foot{display:flex;flex-wrap:wrap;align-items:center;gap:14px;padding:20px 8px 0}
+.mobile-nav__phone{display:flex;align-items:center;gap:8px;font-weight:700;color:var(--gold-soft)}
+
+/* ============ HERO ============ */
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;color:var(--ivory)}
+.hero__bg,.hero__dim{position:absolute;inset:0}
+.hero__bg{width:100%;height:100%;object-fit:cover}
+.hero__dim{background:linear-gradient(115deg,rgba(10,24,19,.93) 0%,rgba(13,31,25,.82) 45%,rgba(13,31,25,.55) 100%)}
+.hero__in{
+ position:relative;z-index:2;flex:1;display:flex;flex-direction:column;justify-content:center;
+ padding-top:calc(var(--header-h) + clamp(24px,4vh,48px));padding-bottom:24px;
+ width:min(1160px,100% - 32px);margin-inline:auto;
+}
+.hero__badge{
+ display:inline-flex;align-items:center;gap:10px;align-self:flex-start;
+ border:1px solid rgba(201,164,92,.55);border-radius:100px;padding:9px 18px;
+ font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);
+ margin-bottom:22px;background:rgba(13,31,25,.4);
+}
+.hero h1{font-size:clamp(32px,5.4vw,60px);max-width:14em}
+.hero h1 em{font-style:italic;color:var(--gold-soft)}
+.hero__sub{max-width:34em;margin-top:18px;color:#d5ded8;font-size:clamp(15px,1.6vw,18px)}
+.hero__cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
+.hero__facts{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.chip{
+ display:inline-flex;align-items:center;gap:9px;
+ background:rgba(247,242,233,.09);border:1px solid rgba(247,242,233,.2);
+ border-radius:100px;padding:10px 16px;font-size:13.5px;font-weight:600;color:#e8eee9;
+ min-height:44px;
+}
+.chip .icon{width:18px;height:18px;color:var(--gold)}
+
+/* бегущая строка - низ первого экрана */
+.marquee{position:relative;z-index:2;overflow:hidden;background:var(--green-950);border-top:1px solid rgba(201,164,92,.4);border-bottom:1px solid rgba(201,164,92,.4)}
+.marquee__track{display:flex;width:max-content;animation:marq 30s linear infinite}
+.marquee__group{display:flex;align-items:center;padding-block:14px}
+.marquee__item{
+ display:flex;align-items:center;gap:22px;padding-inline:22px;
+ font-size:13px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-soft);white-space:nowrap;
+}
+.marquee__item::after{content:"";width:6px;height:6px;background:var(--gold);transform:rotate(45deg)}
+@keyframes marq{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){
+ .marquee__track{animation:none}
+ *{scroll-behavior:auto}
+}
+
+/* ============ ABOUT ============ */
+.about-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,4vw,56px);align-items:center}
+.about-copy p{color:var(--muted);margin-top:14px}
+.about-copy p:first-of-type{margin-top:18px}
+.about-perks{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:28px}
+.perk{
+ background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:16px 18px;
+ display:flex;gap:12px;align-items:flex-start;
+}
+.perk .icon{width:22px;height:22px;color:var(--gold-dark);margin-top:2px}
+.perk b{display:block;font-size:14.5px;line-height:1.35}
+.perk span{font-size:13px;color:var(--muted)}
+.about-photo{position:relative}
+.about-photo__main{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);border:6px solid var(--paper)}
+.about-photo__main img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/4.6}
+.about-tag{
+ position:absolute;left:-14px;bottom:26px;background:var(--green-800);color:var(--gold-soft);
+ padding:12px 20px;border-radius:12px;font-size:13.5px;font-weight:600;box-shadow:var(--shadow);
+ border:1px solid rgba(201,164,92,.4);max-width:240px;line-height:1.4;
+}
+.about-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:clamp(32px,5vw,52px)}
+.about-strip figure{border-radius:14px;overflow:hidden;border:5px solid var(--paper);box-shadow:0 12px 28px rgba(18,42,34,.12)}
+.about-strip img{width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform .6s ease}
+.about-strip figure:hover img{transform:scale(1.05)}
+
+/* ============ SERVICES ============ */
+.services-grid{display:grid;grid-template-columns:1.4fr .9fr;gap:clamp(28px,4vw,52px);align-items:start}
+.service-list{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.service{
+ text-align:left;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);
+ padding:22px 22px 18px;display:flex;flex-direction:column;gap:10px;
+ transition:transform .3s,box-shadow .3s,border-color .3s;position:relative;
+}
+.service:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:var(--gold)}
+.service__icon{
+ width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;
+ background:rgba(30,77,59,.08);color:var(--green-700);
+}
+.service:hover .service__icon{background:var(--green-800);color:var(--gold-soft)}
+.service h3{font-size:19px;font-weight:700}
+.service p{font-size:13.5px;color:var(--muted);flex:1}
+.service__price{
+ display:inline-flex;align-self:flex-start;align-items:center;gap:8px;
+ font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+ color:var(--gold-dark);border:1px solid rgba(169,128,58,.4);border-radius:100px;padding:7px 14px;
+}
+.service__go{position:absolute;top:20px;right:20px;color:var(--gold-dark);opacity:0;transform:translateX(-6px);transition:.3s}
+.service:hover .service__go{opacity:1;transform:none}
+.services-side{position:sticky;top:calc(var(--header-h) + 20px);display:flex;flex-direction:column;gap:18px}
+.services-side figure{border-radius:var(--radius);overflow:hidden;border:6px solid var(--paper);box-shadow:var(--shadow)}
+.services-side img{width:100%;aspect-ratio:3/4;object-fit:cover}
+.price-note{
+ background:var(--sand);border:1px dashed var(--gold-dark);border-radius:14px;
+ padding:16px 18px;font-size:13.5px;color:#5a4a2c;line-height:1.5;
+}
+.price-note b{display:block;margin-bottom:4px}
+.services-cta{display:flex;flex-wrap:wrap;align-items:center;gap:18px;margin-top:clamp(28px,4vw,40px)}
+.services-cta p{font-size:14px;color:var(--muted);max-width:340px}
+
+/* ============ WORKS ============ */
+.works-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.work{position:relative;border-radius:var(--radius);overflow:hidden;border:5px solid var(--paper);box-shadow:0 12px 28px rgba(18,42,34,.12)}
+.work img{width:100%;aspect-ratio:3/4;object-fit:cover;transition:transform .7s ease}
+.work:hover img{transform:scale(1.06)}
+.work__cap{
+ position:absolute;left:12px;right:12px;bottom:12px;
+ background:rgba(13,31,25,.82);backdrop-filter:blur(6px);
+ color:var(--ivory);border:1px solid rgba(201,164,92,.4);
+ border-radius:12px;padding:10px 14px;font-size:13.5px;font-weight:600;line-height:1.35;
+}
+.work__cap span{display:block;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:2px}
+.work--note{
+ display:flex;flex-direction:column;justify-content:center;gap:12px;text-align:center;
+ border:2px dashed var(--gold-dark);background:rgba(232,214,174,.25);
+ box-shadow:none;padding:26px;aspect-ratio:3/4;
+}
+.work--note .icon{width:34px;height:34px;color:var(--gold-dark);margin-inline:auto}
+.work--note b{font-family:'Playfair Display',serif;font-size:19px}
+.work--note p{font-size:13.5px;color:var(--muted)}
+
+/* ============ REVIEWS ============ */
+.reviews-head-row{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px}
+.reviews-src{display:inline-flex;align-items:center;gap:9px;font-size:13.5px;font-weight:600;color:var(--muted);border:1px solid var(--line);background:var(--paper);border-radius:100px;padding:10px 18px;min-height:44px}
+.reviews-src .icon{width:17px;height:17px;color:var(--gold-dark)}
+.reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;margin-top:clamp(26px,4vw,40px)}
+.review{
+ background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);
+ padding:26px 24px 22px;display:flex;flex-direction:column;gap:14px;position:relative;
+ transition:transform .3s,box-shadow .3s;
+}
+.review:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.review__q{color:var(--gold);width:30px;height:30px}
+.review p{font-size:14.5px;line-height:1.65;flex:1}
+.review__foot{display:flex;align-items:center;gap:12px;border-top:1px solid var(--line);padding-top:16px}
+.avatar{
+ width:44px;height:44px;border-radius:50%;flex:none;
+ display:flex;align-items:center;justify-content:center;
+ font-weight:700;font-size:15px;color:#fff;letter-spacing:.03em;
+ box-shadow:inset 0 -6px 12px rgba(0,0,0,.18);
+}
+.av-1{background:#2a6350}.av-2{background:#a9803a}.av-3{background:#8a5a4a}.av-4{background:#47698a}.av-5{background:#6d4f7a}
+.review__foot b{font-size:14.5px;display:block;line-height:1.3}
+.review__foot span{font-size:12.5px;color:var(--muted)}
+
+/* ============ CTA STRIP ============ */
+.cta-strip{position:relative;overflow:hidden}
+.cta-strip::before{
+ content:"";position:absolute;inset:0;
+ background:radial-gradient(600px 300px at 85% 20%,rgba(201,164,92,.18),transparent 70%),
+ radial-gradient(500px 260px at 10% 90%,rgba(42,99,80,.5),transparent 70%);
+}
+.cta-in{position:relative;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:26px}
+.cta-in h2{font-size:clamp(26px,3.6vw,40px);max-width:15em}
+.cta-in h2 em{font-style:italic;color:var(--gold-soft)}
+.cta-in p{color:#b9c6be;margin-top:10px;max-width:30em}
+.cta-actions{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta-phone{display:inline-flex;align-items:center;gap:10px;font-family:'Playfair Display',serif;font-size:26px;color:var(--gold-soft)}
+.cta-phone .icon{color:var(--gold)}
+.cta-note{font-size:13px;color:#9db3a8}
+
+/* ============ CONTACTS ============ */
+.contacts-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(26px,4vw,52px);align-items:stretch}
+.c-cards{display:flex;flex-direction:column;gap:14px}
+.c-card{
+ background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);
+ padding:20px 22px;display:flex;gap:16px;align-items:flex-start;
+}
+.c-card .icon{width:24px;height:24px;color:var(--gold-dark);margin-top:2px}
+.c-card b{display:block;font-size:16px;margin-bottom:3px}
+.c-card p,.c-card a{font-size:14px;color:var(--muted)}
+.c-card a.plain{color:var(--green-700);font-weight:700;border-bottom:1px solid rgba(30,77,59,.3)}
+.c-card a.plain:hover{color:var(--gold-dark)}
+.c-photo{position:relative;border-radius:var(--radius);overflow:hidden;border:6px solid var(--paper);box-shadow:var(--shadow);min-height:320px}
+.c-photo img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.c-photo figcaption{
+ position:absolute;left:14px;right:14px;bottom:14px;background:rgba(13,31,25,.85);
+ color:var(--ivory);border-radius:12px;padding:12px 16px;font-size:13.5px;
+ border:1px solid rgba(201,164,92,.4);
+}
+
+/* ============ FOOTER ============ */
+.footer{background:var(--green-950);color:#b9c6be;padding:44px 0 30px}
+.footer__in{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px}
+.footer .logo b{color:var(--gold-soft)}
+.footer nav{display:flex;flex-wrap:wrap;gap:18px}
+.footer nav a{font-size:13.5px;font-weight:600}
+.footer nav a:hover{color:var(--gold-soft)}
+.footer__phone{display:flex;align-items:center;gap:8px;color:var(--gold-soft);font-weight:700}
+.footer__bottom{border-top:1px solid rgba(247,242,233,.12);margin-top:28px;padding-top:20px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;font-size:12.5px;color:#7d8f86}
+
+/* ============ MODAL ============ */
+.modal{
+ position:fixed;inset:0;z-index:300;display:flex;align-items:center;justify-content:center;
+ padding:16px;visibility:hidden;opacity:0;transition:opacity .3s,visibility .3s;
+}
+.modal.open{visibility:visible;opacity:1}
+.modal__dim{position:absolute;inset:0;background:rgba(9,20,16,.72);backdrop-filter:blur(4px)}
+.modal__dialog{
+ position:relative;width:min(540px,100%);max-height:calc(100dvh - 32px);overflow:auto;
+ background:var(--paper);border-radius:22px;padding:clamp(24px,4vw,36px);
+ box-shadow:0 40px 90px rgba(0,0,0,.45);
+ transform:translateY(24px) scale(.97);transition:transform .35s cubic-bezier(.2,.9,.3,1.1);
+ border-top:5px solid var(--gold);
+}
+.modal.open .modal__dialog{transform:none}
+.modal__close{
+ position:absolute;top:14px;right:14px;width:44px;height:44px;border-radius:12px;
+ border:1px solid var(--line);background:var(--ivory);display:flex;align-items:center;justify-content:center;
+ transition:background .25s,transform .25s;z-index:2;
+}
+.modal__close:hover{background:var(--sand);transform:rotate(90deg)}
+.modal__close svg{width:20px;height:20px;stroke:var(--ink);stroke-width:2}
+.modal h3{font-size:clamp(23px,3vw,28px)}
+.modal__lead{font-size:14px;color:var(--muted);margin-top:8px}
+.modal__phone{
+ display:flex;align-items:center;gap:10px;margin-top:16px;flex-wrap:wrap;
+ background:rgba(30,77,59,.07);border:1px solid rgba(30,77,59,.18);
+ border-radius:12px;padding:12px 16px;font-size:14px;
+}
+.modal__phone a{font-weight:700;color:var(--green-700);font-family:'Playfair Display',serif;font-size:19px}
+.modal__phone .icon{width:19px;height:19px;color:var(--gold-dark)}
+.b-form{margin-top:20px;display:grid;gap:14px}
+.b-form__row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.field label{display:block;font-size:12.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.field input,.field select,.field textarea{
+ width:100%;min-height:48px;border:1px solid var(--line);border-radius:12px;background:#fff;
+ padding:11px 14px;font-family:inherit;font-size:15px;color:var(--ink);
+ transition:border-color .25s,box-shadow .25s;
+}
+.field textarea{resize:vertical;min-height:84px}
+.field input:focus,.field select:focus,.field textarea:focus{
+ outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,164,92,.25);
+}
+.field.error input{border-color:#c0564a;box-shadow:0 0 0 3px rgba(192,86,74,.18)}
+.b-form small{font-size:11.5px;color:var(--muted);text-align:center;line-height:1.5}
+.b-success{text-align:center;padding:26px 6px 8px}
+.b-success__ic{
+ width:72px;height:72px;border-radius:50%;margin:0 auto 18px;
+ background:linear-gradient(180deg,#dcbb77,#b58c42);display:flex;align-items:center;justify-content:center;
+ box-shadow:0 14px 30px rgba(169,128,58,.4);
+}
+.b-success__ic svg{width:34px;height:34px;stroke:#241a08;stroke-width:2.4;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.b-success h3{margin-bottom:10px}
+.b-success p{font-size:14.5px;color:var(--muted);max-width:30em;margin:0 auto 22px}
+
+/* ============ REVEAL ============ */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width:1024px){
+ .works-grid{grid-template-columns:repeat(2,1fr)}
+ .service--wide{grid-column:1/-1}
+}
+@media (max-width:860px){
+ .nav-desktop{display:none}
+ .header__phone{display:none}
+ .burger{display:flex}
+ .about-grid,.services-grid,.contacts-grid{grid-template-columns:1fr}
+ .services-side{position:static;order:-1}
+ .services-side figure img{aspect-ratio:16/10}
+ .about-tag{left:10px}
+}
+@media (max-width:640px){
+ .service-list{grid-template-columns:1fr}
+ .works-grid{grid-template-columns:1fr 1fr;gap:12px}
+ .about-perks{grid-template-columns:1fr}
+ .b-form__row{grid-template-columns:1fr}
+ .about-strip{grid-template-columns:1fr 1fr;gap:10px}
+ .about-strip figure:last-child{display:none}
+ .hero__facts .chip{font-size:12.5px;padding:9px 13px}
+}
+@media (max-width:480px){
+ .works-grid{grid-template-columns:1fr}
+}
+@media (max-height:660px){
+ .hero__in{padding-top:calc(var(--header-h) + 14px)}
+ .hero__sub{margin-top:12px}
+ .hero__cta,.hero__facts{margin-top:18px}
+}
+
+/* ---------- Демо-плашка ALTAVALTA ---------- */
+.demo-ribbon{position:fixed;top:0;left:0;right:0;z-index:1300;display:flex;align-items:center;justify-content:center;gap:16px;background:#221019;border-bottom:1px solid rgba(201,164,104,.35);padding:8px 14px;max-width:100vw;box-sizing:border-box;box-shadow:0 4px 24px rgba(0,0,0,.25);}
+.demo-label{display:flex;align-items:center;gap:8px;color:#fdf3ea;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;white-space:nowrap;}
+.demo-label i{width:5px;height:5px;border-radius:50%;background:#c99a6c;display:inline-block;}
+.demo-label .dl-sub{opacity:.75;font-weight:400;}
+.demo-label .dl-love{color:#c99a6c;}
+.demo-remove{margin-left:6px;background:transparent;border:1px solid rgba(201,164,104,.6);color:#fdf3ea;padding:6px 14px;border-radius:999px;font-size:12px;cursor:pointer;transition:all .25s;flex:none;}
+.demo-remove:hover{background:#c99a6c;color:#221019;}
+@media (max-width:560px){
+ .demo-ribbon{padding:8px 10px;gap:8px;}
+ .demo-label{font-size:10.5px;letter-spacing:.12em;}
+ .demo-remove{padding:5px 10px;font-size:11px;}
+}
+body.demo-off .demo-ribbon{display:none;}
+
+.header{top:44px!important;}
+body.demo-off .header{top:0!important;}
+
+/* ---------- Подпись ALTAVALTA ---------- */
+.footer-brand{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:18px;padding-top:14px;border-top:1px solid rgba(0,0,0,.08);flex-wrap:wrap;width:100%;}
+.brand-made{color:#a8a294;font-size:10px;font-weight:500;letter-spacing:.24em;text-transform:lowercase;}
+.brand-link{display:inline-flex;align-items:center;text-decoration:none;}
+.sig-name{color:#d8d2c2;font-size:13px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;line-height:1;}
+.brand-core{color:#c99a6c;}
+
+/* ---------- фикс: фото не растягиваются атрибутом height ---------- */
+img{height:auto}
+
+/* ===== ДЕМО-ПЛАШКА: стандарт (над шапкой, шапка не наезжает на текст) ===== */
+.demo-ribbon{position:fixed!important;top:0!important;left:0!important;right:0!important;z-index:1300!important;box-sizing:border-box!important}
+body{padding-top:34px!important}
+body.demo-off{padding-top:0!important}
+body.demo-off .demo-ribbon{display:none!important}
+#header{top:34px!important}
+body.demo-off #header{top:0!important}
+
+/* ===== ПЛАШКА-КОМПАКТ: одна строка, ниже, тоньше (стандарт 03.09) ===== */
+.demo-ribbon{height:34px!important;min-height:34px!important;padding:0 12px!important;gap:10px!important;border-bottom-width:1px!important}
+.demo-label{gap:6px!important;font-size:11px!important;letter-spacing:.12em!important}
+.demo-label i{width:4px!important;height:4px!important}
+.demo-remove{margin-left:0!important;padding:3px 9px!important;font-size:10.5px!important;line-height:1.4!important;border-radius:999px!important}
+@media(max-width:560px){
+ .demo-label{font-size:9px!important;letter-spacing:.09em!important;gap:5px!important}
+ .demo-ribbon{gap:7px!important;padding:0 8px!important}
+ .demo-remove{padding:2px 7px!important;font-size:9px!important}
+ .demo-label b,.demo-label .dl-sub,.demo-label .dl-love{white-space:nowrap!important}
+}
+/* ===== ЛЕНТА-СТАНДАРТ: бегущая строка «полотно в рамке» ===== */
+.marquee{
+  border:1px solid rgba(201,164,92,.50)!important;
+  border-radius:10px!important;
+  padding:9px 0!important;
+  overflow:hidden!important;
+}
+.marquee *{font-size:clamp(11px,2.9vw,13px)!important;letter-spacing:.16em!important;line-height:1.25!important;text-transform:uppercase!important}
+.marquee .marquee-track{padding-top:0!important;padding-bottom:0!important}
+.marquee .ticker-track{padding-top:0!important;padding-bottom:0!important}
+.marquee .tape-track{padding-top:0!important;padding-bottom:0!important}
+.marquee .mq-track{padding-top:0!important;padding-bottom:0!important}
+.marquee .mq-t{padding-top:0!important;padding-bottom:0!important}
+.marquee .marquee__track{padding-top:0!important;padding-bottom:0!important}
+.marquee .ticker__track{padding-top:0!important;padding-bottom:0!important}
+.marquee .tape__track{padding-top:0!important;padding-bottom:0!important}
+.marquee .marquee-track ul{padding-top:0!important;padding-bottom:0!important}
+.marquee .mq-set{padding-top:0!important;padding-bottom:0!important}
+.marquee .mq-group{padding-top:0!important;padding-bottom:0!important}
+.marquee .marquee__group{padding-top:0!important;padding-bottom:0!important}
+.marquee .mq-seq{padding-top:0!important;padding-bottom:0!important}
+.marquee .marquee-group{padding-top:0!important;padding-bottom:0!important}
+.marquee .ticker-group{padding-top:0!important;padding-bottom:0!important}
+.marquee .tape-group{padding-top:0!important;padding-bottom:0!important}
+.marquee .ticker-half{padding-top:0!important;padding-bottom:0!important}
+.marquee .marquee__list{padding-top:0!important;padding-bottom:0!important}
+.marquee .ticker-clip{padding-top:0!important;padding-bottom:0!important}
+.marquee .mq-item{padding-top:0!important;padding-bottom:0!important}
+.marquee .ticker-item{padding-top:0!important;padding-bottom:0!important}
+.marquee .tape-item{padding-top:0!important;padding-bottom:0!important}
+.marquee .marquee__item{padding-top:0!important;padding-bottom:0!important}
+.marquee .mq-i{padding-top:0!important;padding-bottom:0!important}
+.marquee ul{padding-top:0!important;padding-bottom:0!important}
+.marquee li{padding-top:0!important;padding-bottom:0!important}
+.marquee span{padding-top:0!important;padding-bottom:0!important}
+@media (max-width:380px){
+  .marquee *{font-size:10.5px!important;letter-spacing:.12em!important}
+}
+
+
+/* ЛЕНТА-ШИРИНА: полотно в рамках родителя (не раздувает экран) */
+.marquee{width:100%!important;max-width:100%!important;min-width:0!important;box-sizing:border-box!important}
+
+
+/* ПОДПИСИ-СТАНДАРТ: подпись под фото, в потоке (как simple) */
+#works .work{position:relative}
+#works .work .work__cap, figcaption{position:static!important;inset:auto!important;left:auto!important;right:auto!important;bottom:auto!important;top:auto!important;
+  background:none!important;backdrop-filter:none!important;border:none!important;box-shadow:none!important;
+  transform:none!important;opacity:1!important;padding:12px 14px 14px!important;
+  display:block!important;border-top:1px solid rgba(128,128,128,.25)!important;
+  font-size:12.5px!important;line-height:1.4!important;color:inherit!important;text-transform:none!important;letter-spacing:.02em!important}
+#works .work .work__cap, figcaption b,#works .work .work__cap, figcaption strong{display:block;font-size:14px!important;font-weight:600!important;color:inherit!important;margin-top:2px}
+#works .work .work__cap, figcaption span,#works .work .work__cap, figcaption small{display:inline-block;font-size:10.5px!important;font-weight:700!important;letter-spacing:.14em!important;text-transform:uppercase!important;opacity:.75!important}
+</style>
+</head>
+<body>
+<div class="demo-ribbon" id="demoRibbon" role="note">
+ <span class="demo-label"><b>ДЕМО-ВЕРСИЯ</b><i></i><span class="dl-sub">создано</span><b class="dl-love">с любовью</b></span>
+ <button type="button" class="demo-remove" id="demoRemove">Убрать метку</button>
+</div>
+
+<!-- ===== SVG SPRITE ===== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+ <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+ <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+ <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+ <symbol id="i-scissors" viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.6 15.4M14.5 14.5 20 20M8.6 8.6 12 12"/></symbol>
+ <symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 3c3.5 4.2 6 7.3 6 10.3a6 6 0 0 1-12 0C6 10.3 8.5 7.2 12 3z"/></symbol>
+ <symbol id="i-dryer" viewBox="0 0 24 24"><rect x="3" y="6" width="11" height="8" rx="4"/><path d="M14 8.5 21 6v8l-7-2.5M7.5 14l1 6h3.2l-.7-6"/></symbol>
+ <symbol id="i-hand" viewBox="0 0 24 24"><path d="M8 12V5.5a1.5 1.5 0 0 1 3 0V11m0-4a1.5 1.5 0 0 1 3 0v5m0-2.5a1.5 1.5 0 0 1 3 0V15a6 6 0 0 1-6 6h-.8a6 6 0 0 1-6-6v-2.5a1.5 1.5 0 0 1 3 0"/></symbol>
+ <symbol id="i-foot" viewBox="0 0 24 24"><path d="M10.5 3c2.6 0 4.2 2.1 4.2 5.2 0 2.6-1.1 4.2-1.1 6.2 0 2.3 1.5 2.9 2.6 3.8.8.7.4 2-.8 2H9.6c-3 0-5.1-2.1-5.1-5 0-2 1-3.4 1-6C5.5 5.6 7.4 3 10.5 3z"/></symbol>
+ <symbol id="i-polish" viewBox="0 0 24 24"><path d="M9 9h6v10a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2z"/><path d="M10 9V6h4v3M11 2.5h2V6"/></symbol>
+ <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 3l1.9 4.8L18.7 9.7l-4.8 1.9L12 16.4l-1.9-4.8L5.3 9.7l4.8-1.9z"/><path d="M18.5 15.5l.8 2.1 2.1.8-2.1.9-.8 2-.8-2-2.1-.9 2.1-.8z"/></symbol>
+ <symbol id="i-quote" viewBox="0 0 24 24"><path d="M7.4 6.2C5 7.8 3.5 10.3 3.5 13.6V18h6.2v-6.2H6.4c.2-2 1.3-3.6 3.1-4.7zM17.2 6.2c-2.4 1.6-3.9 4.1-3.9 7.4V18h6.2v-6.2h-3.3c.2-2 1.3-3.6 3.1-4.7z"/></symbol>
+ <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+ <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+ <symbol id="i-cup" viewBox="0 0 24 24"><path d="M17 9h1.5a2.5 2.5 0 0 1 0 5H17M4 9h13v6a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5zM8 3v3M12 3v3"/></symbol>
+ <symbol id="i-heart" viewBox="0 0 24 24"><path d="M19.8 5.1a5 5 0 0 0-7.1 0L12 5.8l-.7-.7a5 5 0 1 0-7.1 7.1l.7.7 7.1 7 7.1-7 .7-.7a5 5 0 0 0 0-7.1z"/></symbol>
+ <symbol id="i-wallet" viewBox="0 0 24 24"><path d="M20 7H5a2 2 0 0 1 0-4h12v4M3 5v13a3 3 0 0 0 3 3h14a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1"/><circle cx="16.5" cy="14" r="1.3"/></symbol>
+ <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 4.6-3.4 7.7-8 9-4.6-1.3-8-4.4-8-9V6z"/></symbol>
+ <symbol id="i-camera" viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13.5" r="3.5"/></symbol>
+</svg>
+
+<!-- ===== HEADER ===== -->
+<header class="header" id="header">
+ <div class="header__in">
+ <a class="logo" href="#top" aria-label="Салон красоты Лиана - на главную">
+ <b>Лиана</b><span>салон красоты</span>
+ </a>
+ <nav class="nav-desktop" aria-label="Основное меню">
+ <a href="#about">О салоне</a>
+ <a href="#services">Услуги</a>
+ <a href="#works">Работы</a>
+ <a href="#reviews">Отзывы</a>
+ <a href="#contacts">Контакты</a>
+ </nav>
+ <div class="header__right">
+ <a class="header__phone" href="tel:758765"><svg class="icon"><use href="#i-phone"/></svg>758-765</a>
+ <button class="btn btn--sm js-book" type="button">Записаться</button>
+ <button class="burger" id="burgerBtn" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobileNav">
+ <span></span><span></span><span></span>
+ </button>
+ </div>
+ </div>
+ <nav class="mobile-nav" id="mobileNav" aria-label="Мобильное меню">
+ <a class="m-link" href="#about">О салоне</a>
+ <a class="m-link" href="#services">Услуги и цены</a>
+ <a class="m-link" href="#works">Наши работы</a>
+ <a class="m-link" href="#reviews">Отзывы</a>
+ <a class="m-link" href="#contacts">Контакты</a>
+ <div class="mobile-nav__foot">
+ <a class="mobile-nav__phone" href="tel:758765"><svg class="icon"><use href="#i-phone"/></svg>758-765</a>
+ <button class="btn btn--gold btn--sm js-book" type="button">Записаться</button>
+ </div>
+ </nav>
+</header>
+
+<main id="top">
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+ <img class="hero__bg" src="liana_photo01.jpg" alt="Вход в салон красоты «Лиана»">
+ <div class="hero__dim" aria-hidden="true"></div>
+ <div class="hero__in">
+ <span class="hero__badge">Салон красоты · с 09:00 до 20:00</span>
+ <h1>Салон красоты «Лиана» - <em>ваша красота</em> рядом с домом</h1>
+ <p class="hero__sub">Стрижки, окрашивание, укладки, маникюр и педикюр в одном месте. Уютно, чисто, цены демократичные - а в конце визита вас угостят чаем.</p>
+ <div class="hero__cta">
+ <button class="btn btn--gold js-book" type="button"><svg class="icon"><use href="#i-sparkle"/></svg>Записаться онлайн</button>
+ <a class="btn btn--ghost-light" href="#services">Смотреть услуги<svg class="icon" style="width:18px;height:18px"><use href="#i-arrow"/></svg></a>
+ </div>
+ <div class="hero__facts">
+ <span class="chip"><svg class="icon"><use href="#i-clock"/></svg>Работаем 09:00-20:00</span>
+ <span class="chip"><svg class="icon"><use href="#i-scissors"/></svg>Волосы и ногти - всё в одном месте</span>
+ <span class="chip"><svg class="icon"><use href="#i-phone"/></svg>Короткий номер 758-765</span>
+ </div>
+ </div>
+ <!-- бегущая строка: низ первого экрана -->
+ <div class="marquee" aria-label="Услуги салона">
+ <div class="marquee__track">
+ <div class="marquee__group">
+ <span class="marquee__item">Стрижки</span><span class="marquee__item">Окрашивание</span><span class="marquee__item">Укладки и причёски</span><span class="marquee__item">Маникюр</span><span class="marquee__item">Педикюр</span><span class="marquee__item">Гель-лак</span><span class="marquee__item">Наращивание ногтей</span><span class="marquee__item">Запись 758-765</span>
+ </div>
+ <div class="marquee__group" aria-hidden="true">
+ <span class="marquee__item">Стрижки</span><span class="marquee__item">Окрашивание</span><span class="marquee__item">Укладки и причёски</span><span class="marquee__item">Маникюр</span><span class="marquee__item">Педикюр</span><span class="marquee__item">Гель-лак</span><span class="marquee__item">Наращивание ногтей</span><span class="marquee__item">Запись 758-765</span>
+ </div>
+ </div>
+ </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section class="section section--paper" id="about">
+ <div class="wrap">
+ <div class="about-grid">
+ <div class="about-copy reveal">
+ <span class="eyebrow">О салоне</span>
+ <h2>Место, куда хочется вернуться</h2>
+ <p>«Лиана» - салон полного цикла: здесь делают женские и мужские стрижки, окрашивание, укладки и причёски, маникюр, педикюр, покрытие гель-лаком и наращивание ногтей.</p>
+ <p>Клиенты отмечают приветливый персонал, чистоту и уют, демократичные цены и внимательное отношение мастеров. А ещё здесь можно записать маникюр и педикюр к одному мастеру и сэкономить время.</p>
+ <div class="about-perks">
+ <div class="perk"><svg class="icon"><use href="#i-heart"/></svg><div><b>Приветливый персонал</b><span>уютная и чистая атмосфера</span></div></div>
+ <div class="perk"><svg class="icon"><use href="#i-wallet"/></svg><div><b>Демократичные цены</b><span>красота без переплат</span></div></div>
+ <div class="perk"><svg class="icon"><use href="#i-cup"/></svg><div><b>Чай и угощение</b><span>комплимент для гостей салона</span></div></div>
+ <div class="perk"><svg class="icon"><use href="#i-clock"/></svg><div><b>Удобный график</b><span>ежедневно с 09:00 до 20:00</span></div></div>
+ </div>
+ </div>
+ <div class="about-photo reveal">
+ <figure class="about-photo__main">
+ <img src="liana_photo02.jpg" alt="Ступени и вход в салон красоты «Лиана»" loading="lazy">
+ </figure>
+ <div class="about-tag">Мастера работают по записи - подберём удобное время с 09:00 до 20:00</div>
+ </div>
+ </div>
+ <div class="about-strip reveal">
+ <figure><img src="liana_photo21.jpg" alt="Вход в салон «Лиана», вид со стороны улицы" loading="lazy"></figure>
+ <figure><img src="liana_photo32.jpg" alt="Фасад салона «Лиана» с окнами и вывеской" loading="lazy"></figure>
+ <figure><img src="liana_photo16.jpg" alt="Витрина салона красоты «Лиана»" loading="lazy"></figure>
+ </div>
+ </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section class="section" id="services">
+ <div class="wrap">
+ <div class="section-head reveal">
+ <span class="eyebrow">Услуги и цены</span>
+ <h2>Всё для волос и ногтей</h2>
+ <p>Нажмите на услугу, чтобы сразу выбрать удобное время записи.</p>
+ </div>
+ <div class="services-grid">
+ <div class="service-list reveal">
+ <button class="service js-book" type="button" data-service="Стрижка">
+ <span class="service__icon"><svg class="icon"><use href="#i-scissors"/></svg></span>
+ <h3>Стрижки</h3>
+ <p>Женские и мужские стрижки любой сложности</p>
+ <span class="service__price">цена по записи</span>
+ <span class="service__go"><svg class="icon" style="width:20px;height:20px"><use href="#i-arrow"/></svg></span>
+ </button>
+ <button class="service js-book" type="button" data-service="Окрашивание">
+ <span class="service__icon"><svg class="icon"><use href="#i-drop"/></svg></span>
+ <h3>Окрашивание</h3>
+ <p>Однотонное и сложное окрашивание волос</p>
+ <span class="service__price">цена по записи</span>
+ <span class="service__go"><svg class="icon" style="width:20px;height:20px"><use href="#i-arrow"/></svg></span>
+ </button>
+ <button class="service js-book" type="button" data-service="Укладка / причёска">
+ <span class="service__icon"><svg class="icon"><use href="#i-dryer"/></svg></span>
+ <h3>Укладки и причёски</h3>
+ <p>Повседневные укладки и причёски к событию</p>
+ <span class="service__price">цена по записи</span>
+ <span class="service__go"><svg class="icon" style="width:20px;height:20px"><use href="#i-arrow"/></svg></span>
+ </button>
+ <button class="service js-book" type="button" data-service="Маникюр">
+ <span class="service__icon"><svg class="icon"><use href="#i-hand"/></svg></span>
+ <h3>Маникюр</h3>
+ <p>Аккуратный маникюр с покрытием или без</p>
+ <span class="service__price">цена по записи</span>
+ <span class="service__go"><svg class="icon" style="width:20px;height:20px"><use href="#i-arrow"/></svg></span>
+ </button>
+ <button class="service js-book" type="button" data-service="Педикюр">
+ <span class="service__icon"><svg class="icon"><use href="#i-foot"/></svg></span>
+ <h3>Педикюр</h3>
+ <p>Уход за стопами и ногтями ног</p>
+ <span class="service__price">цена по записи</span>
+ <span class="service__go"><svg class="icon" style="width:20px;height:20px"><use href="#i-arrow"/></svg></span>
+ </button>
+ <button class="service js-book" type="button" data-service="Покрытие гель-лак">
+ <span class="service__icon"><svg class="icon"><use href="#i-polish"/></svg></span>
+ <h3>Покрытие гель-лак</h3>
+ <p>Стойкое покрытие с блеском до нескольких недель</p>
+ <span class="service__price">цена по записи</span>
+ <span class="service__go"><svg class="icon" style="width:20px;height:20px"><use href="#i-arrow"/></svg></span>
+ </button>
+ <button class="service service--wide js-book" type="button" data-service="Наращивание ногтей">
+ <span class="service__icon"><svg class="icon"><use href="#i-sparkle"/></svg></span>
+ <h3>Наращивание ногтей</h3>
+ <p>Наращивание нужной длины и формы с дизайном</p>
+ <span class="service__price">цена по записи</span>
+ <span class="service__go"><svg class="icon" style="width:20px;height:20px"><use href="#i-arrow"/></svg></span>
+ </button>
+ </div>
+ <div class="services-side reveal">
+ <figure><img src="liana_photo11.jpg" alt="Вывеска салона «Лиана» с перечнем услуг" loading="lazy"></figure>
+ <div class="price-note">
+ <b>Про стоимость</b>
+ Итоговая цена зависит от длины волос, сложности работы и материалов. Точную стоимость мастер назовёт при записи.
+ </div>
+ </div>
+ </div>
+ <div class="services-cta reveal">
+ <button class="btn btn--gold js-book" type="button"><svg class="icon"><use href="#i-sparkle"/></svg>Записаться на удобное время</button>
+ <p>Или позвоните нам: <a href="tel:758765" style="font-weight:700;color:var(--green-700)">758-765</a> - подберём время с 09:00 до 20:00.</p>
+ </div>
+ </div>
+</section>
+
+<!-- ===== WORKS ===== -->
+<section class="section section--paper" id="works">
+ <div class="wrap">
+ <div class="section-head reveal">
+ <span class="eyebrow">Наши работы</span>
+ <h2>Результаты мастеров «Лианы»</h2>
+ <p>Фотографии реальных покрытий и ухода, выполненных в салоне.</p>
+ </div>
+ <div class="works-grid reveal">
+ <figure class="work">
+ <img src="liana_photo05.jpg" alt="Маникюр с синим блестящим гель-лаком" loading="lazy">
+ <figcaption class="work__cap"><span>Маникюр</span>Синий глиттер - покрытие гель-лаком</figcaption>
+ </figure>
+ <figure class="work">
+ <img src="liana_photo13.jpg" alt="Маникюр со светло-розовым лаком и блёстками" loading="lazy">
+ <figcaption class="work__cap"><span>Маникюр</span>Розовый с блёстками - нежное покрытие</figcaption>
+ </figure>
+ <figure class="work">
+ <img src="liana_photo06.jpg" alt="Руки с блестящим синим покрытием ногтей" loading="lazy">
+ <figcaption class="work__cap"><span>Маникюр</span>Глубокий синий - блестящее покрытие</figcaption>
+ </figure>
+ <figure class="work">
+ <img src="liana_photo33.jpg" alt="Маникюр в розовом цвете с блёстками" loading="lazy">
+ <figcaption class="work__cap"><span>Покрытие</span>Розовые блёстки - сияющий дизайн</figcaption>
+ </figure>
+ <figure class="work">
+ <img src="liana_photo04.jpg" alt="Процесс педикюра: мастер ухаживает за стопой" loading="lazy">
+ <figcaption class="work__cap"><span>Педикюр</span>Уход за стопами - чистый результат</figcaption>
+ </figure>
+ <div class="work work--note">
+ <svg class="icon"><use href="#i-camera"/></svg>
+ <b>Стрижки и окрашивание</b>
+ <p>Примеры работ скоро появятся - сейчас пополняем фотогалерею мастеров по волосам.</p>
+ </div>
+ </div>
+ </div>
+</section>
+
+<!-- ===== REVIEWS ===== -->
+<section class="section" id="reviews">
+ <div class="wrap">
+ <div class="section-head reviews-head-row reveal">
+ <div>
+ <span class="eyebrow">Отзывы клиентов</span>
+ <h2>Что говорят о нас</h2>
+ </div>
+ <span class="reviews-src"><svg class="icon"><use href="#i-shield"/></svg>Реальные отзывы с Яндекс Карт</span>
+ </div>
+ <div class="reviews-grid reveal">
+ <article class="review">
+ <svg class="icon icon--fill review__q"><use href="#i-quote"/></svg>
+ <p>Супер. Маникюр и педикюр один мастер за 2 часа сделала. Чаем с шоколадкой еще угости .</p>
+ <div class="review__foot"><span class="avatar av-1" aria-hidden="true">W</span><div><b>WebLuck</b><span>отзыв с Яндекс Карт</span></div></div>
+ </article>
+ <article class="review">
+ <svg class="icon icon--fill review__q"><use href="#i-quote"/></svg>
+ <p>Отличный салон! Всегда стригусь только здесь и всегда доволен!</p>
+ <div class="review__foot"><span class="avatar av-2" aria-hidden="true">R</span><div><b>Rub.O.</b><span>отзыв с Яндекс Карт</span></div></div>
+ </article>
+ <article class="review">
+ <svg class="icon icon--fill review__q"><use href="#i-quote"/></svg>
+ <p>Очень приветливый персонал. Уютно и чисто в салоне. Цены демократичные.</p>
+ <div class="review__foot"><span class="avatar av-3" aria-hidden="true">ИС</span><div><b>ирина снежкина</b><span>отзыв с Яндекс Карт</span></div></div>
+ </article>
+ <article class="review">
+ <svg class="icon icon--fill review__q"><use href="#i-quote"/></svg>
+ <p>Второй раз посещаю этот салон,в плане маникюра.Юля,просто мастер своего дела!!!</p>
+ <div class="review__foot"><span class="avatar av-4" aria-hidden="true">ТК</span><div><b>Татьяна Крушельницкая</b><span>отзыв с Яндекс Карт</span></div></div>
+ </article>
+ <article class="review">
+ <svg class="icon icon--fill review__q"><use href="#i-quote"/></svg>
+ <p>Отличный салон! Очень внимательные мастера, приятная атмосфера, буду постоянным клиентом! Спасибо!</p>
+ <div class="review__foot"><span class="avatar av-5" aria-hidden="true">Я</span><div><b>Я</b><span>отзыв с Яндекс Карт</span></div></div>
+ </article>
+ </div>
+ </div>
+</section>
+
+<!-- ===== CTA STRIP ===== -->
+<section class="section section--dark cta-strip">
+ <div class="wrap cta-in reveal">
+ <div>
+ <h2>Запишитесь <em>уже сегодня</em> - и приходите за красотой</h2>
+ <p>Оставьте заявку - перезвоним, подберём услугу, мастера и удобное время с 09:00 до 20:00.</p>
+ </div>
+ <div class="cta-actions">
+ <a class="cta-phone" href="tel:758765"><svg class="icon"><use href="#i-phone"/></svg>758-765</a>
+ <button class="btn btn--gold js-book" type="button">Записаться онлайн</button>
+ <span class="cta-note">Звонок бесплатный · отвечаем в часы работы салона</span>
+ </div>
+ </div>
+</section>
+
+<!-- ===== CONTACTS ===== -->
+<section class="section section--paper" id="contacts">
+ <div class="wrap">
+ <div class="section-head reveal">
+ <span class="eyebrow">Контакты</span>
+ <h2>Как нас найти и записаться</h2>
+ </div>
+ <div class="contacts-grid reveal">
+ <div class="c-cards">
+ <div class="c-card">
+ <svg class="icon"><use href="#i-phone"/></svg>
+ <div><b>Телефон</b><p><a href="tel:758765" class="plain">758-765</a> - запись и вопросы по услугам</p></div>
+ </div>
+ <div class="c-card">
+ <svg class="icon"><use href="#i-clock"/></svg>
+ <div><b>Часы работы</b><p>С 09:00 до 20:00 - удобно зайти до работы или после</p></div>
+ </div>
+ <div class="c-card">
+ <svg class="icon"><use href="#i-pin"/></svg>
+ <div>
+ <b>Адрес</b>
+ <p>Ориентир - салон «Лиана» рядом с «Эко-маркетом». Точный адрес и маршрут - на Яндекс Картах:</p>
+ <p style="margin-top:8px"><a class="plain" href="https://yandex.ru/maps/org/liana/208211966198/" target="_blank" rel="noopener">Открыть на Яндекс Картах</a></p>
+ </div>
+ </div>
+ <div class="c-card">
+ <svg class="icon"><use href="#i-sparkle"/></svg>
+ <div><b>Запись</b><p>По телефону 758-765 или через онлайн-форму - займёт меньше минуты.</p>
+ <p style="margin-top:10px"><button class="btn btn--ghost-dark btn--sm js-book" type="button">Оставить заявку</button></p></div>
+ </div>
+ </div>
+ <figure class="c-photo">
+ <img src="liana_photo12.jpg" alt="Улица со входом в салон красоты «Лиана»" loading="lazy">
+ <figcaption>Ищите вывеску «Салон красоты „Лиана“» - вход по ступеням, рядом «Эко-маркет»</figcaption>
+ </figure>
+ </div>
+ </div>
+</section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+ <div class="wrap">
+ <div class="footer__in">
+ <a class="logo" href="#top"><b>Лиана</b><span>салон красоты</span></a>
+ <nav aria-label="Меню в подвале">
+ <a href="#about">О салоне</a>
+ <a href="#services">Услуги</a>
+ <a href="#works">Работы</a>
+ <a href="#reviews">Отзывы</a>
+ <a href="#contacts">Контакты</a>
+ </nav>
+ <a class="footer__phone" href="tel:758765"><svg class="icon" style="width:18px;height:18px"><use href="#i-phone"/></svg>758-765</a>
+ </div>
+ <div class="footer__bottom">
+ <span>© <span id="yearNow">2025</span> Салон красоты «Лиана». Работаем с 09:00 до 20:00.</span>
+ <span>Цены уточняйте при записи.</span>
+ </div>
+ </div>
+
+<div class="footer-brand">
+ <span class="brand-made">created by</span>
+ <a class="brand-link" href="https://t.me/ALTAVALTA" target="_blank" rel="noopener">
+ <span class="sig-name"><b>A</b><b>L</b><b>T</b><b>A</b><b class="brand-core">V</b><b>A</b><b>L</b><b>T</b><b>A</b></span>
+ </a>
+</div>
+
+</footer>
+
+<!-- ===== MODAL: онлайн-запись ===== -->
+<div class="modal" id="bookingModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
+ <div class="modal__dim" data-close-dim aria-hidden="true"></div>
+ <div class="modal__dialog">
+ <button class="modal__close" id="modalClose" type="button" aria-label="Закрыть окно записи">
+ <svg viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6 6 18"/></svg>
+ </button>
+
+ <div id="modalFormView">
+ <h3 id="modalTitle">Онлайн-запись</h3>
+ <p class="modal__lead">Оставьте контакты - перезвоним и подтвердим время визита.</p>
+ <div class="modal__phone">
+ <svg class="icon"><use href="#i-phone"/></svg>
+ <span>Или позвоните нам:&nbsp;<a href="tel:758765">758-765</a></span>
+ </div>
+ <form class="b-form" id="bookingForm" novalidate>
+ <div class="field" id="fldName">
+ <label for="fName">Ваше имя *</label>
+ <input type="text" id="fName" name="name" placeholder="Как к вам обращаться" autocomplete="name">
+ </div>
+ <div class="field" id="fldPhone">
+ <label for="fPhone">Телефон *</label>
+ <input type="tel" id="fPhone" name="phone" placeholder="Номер для связи" autocomplete="tel">
+ </div>
+ <div class="b-form__row">
+ <div class="field">
+ <label for="fService">Услуга</label>
+ <select id="fService" name="service">
+ <option value="" selected>Выберите услугу</option>
+ <option>Стрижка</option>
+ <option>Окрашивание</option>
+ <option>Укладка / причёска</option>
+ <option>Маникюр</option>
+ <option>Педикюр</option>
+ <option>Покрытие гель-лак</option>
+ <option>Наращивание ногтей</option>
+ <option>Несколько услуг / нужна консультация</option>
+ </select>
+ </div>
+ <div class="field">
+ <label for="fTime">Удобное время</label>
+ <select id="fTime" name="time">
+ <option value="" selected>Выберите время</option>
+ <option>Утро (09:00-12:00)</option>
+ <option>День (12:00-15:00)</option>
+ <option>Вечер (15:00-18:00)</option>
+ <option>Поздний вечер (18:00-20:00)</option>
+ </select>
+ </div>
+ </div>
+ <div class="field">
+ <label for="fComment">Комментарий</label>
+ <textarea id="fComment" name="comment" placeholder="Пожелания, дизайн, удобное время - всё, что важно"></textarea>
+ </div>
+ <button class="btn btn--gold btn--wide" type="submit"><svg class="icon"><use href="#i-check"/></svg>Отправить заявку</button>
+ <small>Нажимая кнопку, вы соглашаетесь на обработку персональных данных для связи по записи.</small>
+ </form>
+ </div>
+
+ <div class="b-success" id="modalSuccessView" hidden>
+ <div class="b-success__ic"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></div>
+ <h3>Заявка отправлена!</h3>
+ <p>Спасибо! Мы получили вашу заявку и перезвоним, чтобы подтвердить услугу и время визита. Если удобнее сейчас - наберите <a href="tel:758765" style="font-weight:700;color:var(--green-700)">758-765</a>.</p>
+ <button class="btn btn--ghost-dark" id="successOk" type="button">Хорошо</button>
+ </div>
+ </div>
+</div>
+
+<script>
+(function(){
+ 'use strict';
+
+ /* ---------- Год в футере ---------- */
+ document.getElementById('yearNow').textContent = new Date().getFullYear();
+
+ /* ---------- Тень шапки при скролле ---------- */
+ var headerEl = document.getElementById('header');
+ window.addEventListener('scroll', function(){
+ headerEl.classList.toggle('scrolled', window.scrollY > 8);
+ }, {passive:true});
+
+ /* ---------- Мобильное меню ---------- */
+ var burgerBtn = document.getElementById('burgerBtn');
+ var mobileNav = document.getElementById('mobileNav');
+
+ function setMenu(open){
+ mobileNav.classList.toggle('open', open);
+ burgerBtn.classList.toggle('active', open);
+ burgerBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+ burgerBtn.setAttribute('aria-label', open ? 'Закрыть меню' : 'Открыть меню');
+ }
+ burgerBtn.addEventListener('click', function(){
+ setMenu(!mobileNav.classList.contains('open')); // повторное нажатие закрывает
+ });
+ mobileNav.querySelectorAll('a').forEach(function(link){
+ link.addEventListener('click', function(){ setMenu(false); });
+ });
+
+ /* ---------- Модальное окно записи ---------- */
+ var modal = document.getElementById('bookingModal');
+ var modalClose = document.getElementById('modalClose');
+ var formView = document.getElementById('modalFormView');
+ var successView = document.getElementById('modalSuccessView');
+ var bookingForm = document.getElementById('bookingForm');
+ var serviceSelect = document.getElementById('fService');
+ var nameInput = document.getElementById('fName');
+ var phoneInput = document.getElementById('fPhone');
+ var lastFocus = null;
+
+ function openModal(serviceName){
+ lastFocus = document.activeElement;
+ // сброс к форме (если ранее показан успех)
+ formView.hidden = false;
+ successView.hidden = true;
+ bookingForm.reset();
+ document.getElementById('fldName').classList.remove('error');
+ document.getElementById('fldPhone').classList.remove('error');
+ if(serviceName){
+ var opts = serviceSelect.options;
+ for(var i=0;i<opts.length;i++){
+ if(opts[i].value === serviceName || opts[i].text === serviceName){
+ serviceSelect.selectedIndex = i; break;
+ }
+ }
+ }
+ modal.classList.add('open');
+ modal.setAttribute('aria-hidden','false');
+ document.body.classList.add('lock');
+ setMenu(false);
+ setTimeout(function(){ nameInput.focus(); }, 120);
+ }
+
+ function closeModal(){
+ modal.classList.remove('open');
+ modal.setAttribute('aria-hidden','true');
+ document.body.classList.remove('lock');
+ if(lastFocus && lastFocus.focus) lastFocus.focus();
+ }
+
+ document.querySelectorAll('.js-book').forEach(function(btn){
+ btn.addEventListener('click', function(){
+ openModal(btn.getAttribute('data-service') || '');
+ });
+ });
+ modalClose.addEventListener('click', closeModal);
+ modal.addEventListener('click', function(e){
+ if(e.target === modal || e.target.hasAttribute('data-close-dim')) closeModal();
+ });
+ document.addEventListener('keydown', function(e){
+ if(e.key === 'Escape'){
+ if(modal.classList.contains('open')) closeModal();
+ if(mobileNav.classList.contains('open')) setMenu(false);
+ }
+ });
+
+ /* ---------- Валидация и отправка формы ---------- */
+ bookingForm.addEventListener('submit', function(e){
+ e.preventDefault();
+ var ok = true;
+ var fldName = document.getElementById('fldName');
+ var fldPhone = document.getElementById('fldPhone');
+ fldName.classList.remove('error');
+ fldPhone.classList.remove('error');
+
+ if(nameInput.value.trim().length < 2){ fldName.classList.add('error'); ok = false; }
+ var digits = phoneInput.value.replace(/\D/g,'');
+ if(digits.length < 5){ fldPhone.classList.add('error'); ok = false; }
+ if(!ok){ (fldName.classList.contains('error') ? nameInput : phoneInput).focus(); return; }
+
+ // показ подтверждения прямо в модалке
+ formView.hidden = true;
+ successView.hidden = false;
+ document.getElementById('successOk').focus();
+ });
+ document.getElementById('successOk').addEventListener('click', closeModal);
+
+ /* ---------- Появление секций при скролле ---------- */
+ var revealEls = document.querySelectorAll('.reveal');
+ if('IntersectionObserver' in window){
+ var io = new IntersectionObserver(function(entries){
+ entries.forEach(function(entry){
+ if(entry.isIntersecting){
+ entry.target.classList.add('in');
+ io.unobserve(entry.target);
+ }
+ });
+ }, {threshold:.12});
+ revealEls.forEach(function(el){ io.observe(el); });
+ } else {
+ revealEls.forEach(function(el){ el.classList.add('in'); });
+ }
+})();
+</script>
+
+<script>
+(function(){
+ var btn=document.getElementById('demoRemove');
+ if(btn){ btn.addEventListener('click',function(){ document.body.classList.add('demo-off'); }); }
+})();
+</script>
+
+<script>
+(function(){
+ var form = document.getElementById('bookingForm');
+ if(!form) return;
+ form.addEventListener('submit', function(e){
+ e.preventDefault();
+ var q = function(n){ var el=form.querySelector('[name="'+n+'"]'); return el?el.value.trim():''; };
+ var name = q('name'), phone = q('phone');
+ if(name.length<2 || phone.replace(/\D/g,'').length<10){
+ var p = form.querySelector('[name="phone"]'); if(p){ p.focus(); }
+ return;
+ }
+ var payload = {
+ name: name,
+ phone: phone,
+ service: q('service') || 'Другое / подскажет администратор',
+ time: q('time'),
+ comment: q('comment'),
+ source: 'liana'
+ };
+ var btn = form.querySelector('[type="submit"]');
+ if(btn){ btn.disabled = true; btn.textContent = 'Отправляем…'; }
+ var ctrl = new AbortController();
+ var timer = setTimeout(function(){ ctrl.abort(); }, 20000);
+ function done(){
+ clearTimeout(timer);
+ if(btn){ btn.disabled = false; btn.textContent = 'Отправить заявку'; }
+ }
+ function showSuccess(){
+ if('hide'==='sent' || 'hide'==='done'){
+ var w = form.closest(''); if(w){ w.classList.add('sent'); }
+ return;
+ }
+ var v = document.querySelector('#modalFormView');
+ if(v){ v.hidden = true; v.style.display = 'none'; }
+ var sv = document.getElementById('modalSuccessView');
+ if(sv){
+ if('hide'==='hide'){ sv.hidden = false; }
+ else if('hide'==='show'){ sv.classList.add('show'); sv.hidden = false; }
+ else if('hide'==='block'){ sv.style.display = 'block'; }
+ }
+ }
+ fetch('https://altavalta-leads.altavalta.workers.dev/', {
+ method: 'POST',
+ headers: {'Content-Type':'application/json','X-Lead-Key':'AV-1UqZW0lEhgXpGRBjkG1TF0yn'},
+ body: JSON.stringify(payload),
+ signal: ctrl.signal
+ }).then(function(r){ return r.text().then(function(t){ try{return JSON.parse(t);}catch(err){return {ok:false,http:r.status};} }); })
+ .then(function(res){
+ done();
+ if(res && res.ok){ showSuccess(); }
+ else { alert('Не удалось отправить. Позвоните нам: +7 (4012) 75-87-65'); }
+ })
+ .catch(function(){
+ done();
+ alert('Не удалось отправить. Позвоните нам: +7 (4012) 75-87-65');
+ });
+ });
+})();
+</script>
+</body>
+</html>
